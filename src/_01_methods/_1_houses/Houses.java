@@ -1,5 +1,7 @@
 package _01_methods._1_houses;
 
+import java.util.Random;
+
 import org.jointheleague.graphical.robot.Robot;
 
 /*
@@ -13,15 +15,48 @@ public class Houses {
 	
 		// Check the recipe to find out what code to put here
 		Robot rob = new Robot();
-		rob.moveTo(25, 500);
+		rob.moveTo(10, 875);
 		rob.penDown();
 		rob.miniaturize();
 		rob.setPenWidth(25);
-		rob.setSpeed(100);
-		int h = 100;
-		drawFlatRoof(rob, h);
-		drawPointyRoof(rob, h);
+		rob.setSpeed(10);
+		decider(rob);
+		decider(rob);
+		decider(rob);
+		decider(rob);
+		decider(rob);
+		decider(rob);
+		decider(rob);
+		decider(rob);
+		decider(rob);
+		decider(rob);
+		decider(rob);
+		decider(rob);
+		decider(rob);
+		decider(rob);
+		decider(rob);
+		decider(rob);
+		decider(rob);
+		decider(rob);
+		decider(rob);
+		decider(rob);
 	}
+
+	
+
+	private void decider(Robot rob) {
+		Random ran = new Random();
+		int randomChoice = ran.nextInt (199 - 0 + 1) + 0;
+		int h = randomChoice;
+		if(h >= 125) {
+			drawFlatRoof(rob, h);
+		}else {
+			drawPointyRoof(rob, h);
+		}
+		
+	}
+
+
 
 	private void drawPointyRoof(Robot rob, int h) {
 		rob.setRandomPenColor();
