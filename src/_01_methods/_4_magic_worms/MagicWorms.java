@@ -1,4 +1,4 @@
-package _01_methods._4_magic_worms.MagicWorms;
+package _01_methods._4_magic_worms;
 
 import processing.core.PApplet;
 
@@ -35,7 +35,8 @@ public class MagicWorms extends PApplet {
 
     @Override
     public void settings() {
-        size(WIDTH, HEIGHT);
+    	size(width, height);
+        background(0, 0, 0);
     }
 
     @Override
