@@ -70,10 +70,11 @@ public class RainGame extends PApplet {
     @Override
     public void draw() {
     	background(200,200,220);
-    	fill(0,0,255);
-    	stroke(0,0,255);
+    	fill(0,0,255, 50);
+    	stroke(0,0,255, 50);
     	ellipse(x,y,10,10);
     	fill(0,0,125);
+    	stroke(0,0,125);
     	rect(mouseX, 575, 25, 25);
     	if(y>=575) {
     		checkCatch(x);
