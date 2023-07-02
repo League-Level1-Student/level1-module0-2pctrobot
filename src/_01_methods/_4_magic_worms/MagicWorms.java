@@ -50,7 +50,6 @@ public class MagicWorms extends PApplet {
     	makeMagical();
     	fill(0,240,230);
     	for(int j = 0; j < 300; j++) {
-    		fill(0+j,0,0+j);
 			ellipse(getWormX(j), getWormY(j), 5, 5);	
     	}
     }
