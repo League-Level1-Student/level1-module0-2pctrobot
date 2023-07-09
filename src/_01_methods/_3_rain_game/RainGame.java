@@ -80,6 +80,7 @@ public class RainGame extends PApplet {
     		checkCatch(x);
     	}
     	if(lives == 0) {
+    		println("Your score was: " + score/2);
     		exit();
     	}
     	Random ran = new Random();
@@ -105,9 +106,8 @@ public class RainGame extends PApplet {
         if (x > mouseX && x < mouseX + bucketWidth) {
             score++;
         } else if (score > 0) {
-            score--;
             lives--;
         }
-        println("Your score is now: " + score/2);
+        
     }
 }
