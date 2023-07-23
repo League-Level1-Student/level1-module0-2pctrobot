@@ -17,15 +17,21 @@ public class FinishLine {
 	
 	public static void main(String[] args) {
 		//1. Call the drawFinishLine() method
-		
+			drawFinishLine();
 		//2. Call the crazyMove() method to move the robot
-		
+			crazyMove();
 		//3. Call the getTotalDistance() and save what is returned into a variable
-		
+			getTotalDistance();
+			int td = totalDistance;
 		//4. Call the hasCrossedFinishLine() method and save what is returned into a variable
-		
+			hasCrossedFinishLine();
+			boolean linecrossed = hasCrossedFinishLine();
 		//5. If the robot has crossed the finish line... 
-			
+			if(linecrossed) {
+				JOptionPane.showMessageDialog(null, "The Rob crossed the line and got to " + td + ".");
+			}else {
+				JOptionPane.showMessageDialog(null, "The Rob did not cross the line but got to " + td + ".");
+			}
 			//6. Use a pop up to say the robot finished and how far it went
 		
 		
@@ -66,6 +72,7 @@ public class FinishLine {
 		rob.move(1000);
 		
 		//F
+		rob.setPenColor(255, 0, 0);
 		rob.setX(300);
 		rob.setY(210);
 		rob.turn(180);
@@ -82,6 +89,7 @@ public class FinishLine {
 		rob.move(15);
 		
 		//I
+		rob.setPenColor(255, 150, 0);
 		rob.setX(330);
 		rob.setY(210);
 		rob.turn(-90);
@@ -96,6 +104,7 @@ public class FinishLine {
 		rob.move(20);
 		
 		//N
+		rob.setPenColor(255, 255, 0);
 		rob.setX(360);
 		rob.setY(240);
 		rob.turn(90);
@@ -106,6 +115,7 @@ public class FinishLine {
 		rob.move(30);
 		
 		//I
+		rob.setPenColor(0, 255, 0);
 		rob.setX(400);
 		rob.setY(210);
 		rob.turn(90);
@@ -120,6 +130,7 @@ public class FinishLine {
 		rob.move(20);
 		
 		//S
+		rob.setPenColor(0, 0, 255);
 		rob.setX(430);
 		rob.turn(180);
 		rob.move(20);
@@ -133,6 +144,7 @@ public class FinishLine {
 		rob.move(20);
 		
 		//H
+		rob.setPenColor(255, 0, 255);
 		rob.setX(460);
 		rob.setY(210);
 		rob.turn(90);
@@ -145,6 +157,7 @@ public class FinishLine {
 		rob.move(15);
 		rob.turn(180);
 		rob.move(30);
+		rob.setPenColor(0, 0, 0);
 	}
 	
 	static int getTotalDistance() {

@@ -14,7 +14,7 @@ public class Houses {
 		
 	
 		// Check the recipe to find out what code to put here
-		Robot rob = new Robot();
+		Robot rob = new Robot("mini");
 		rob.moveTo(10, 875);
 		rob.penDown();
 		rob.miniaturize();
