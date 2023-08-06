@@ -12,14 +12,24 @@ public class TooManyShapes {
 	static Robot rob = new Robot();
 
 	public static void main(String[] args) {
+		int degrees = 0;
+		rob.miniaturize();
+		rob.setSpeed(100);
 		//1. Ask the user how many sides they want their shape to be
 			String sides = JOptionPane.showInputDialog(null, "How many sides do you want for your shape?");
+			int numSides = Integer.parseInt(sides);
 		//2. Ask the user how many shapes they want
 			String shapes = JOptionPane.showInputDialog(null, "How many shapes do you want?");
+			int numShapes = Integer.parseInt(shapes);
 		//3. Call canMakeShape() and save what is returned into a variable
 		
 		//4. If the shape CAN be drawn
-		
+		if(canMakeShape(numSides)) {
+			degrees = calculateTurnAngle(numSides);
+			drawPolygons(numSides, numShapes, degrees);
+		}else {
+			JOptionPane.showMessageDialog(null, notEnoughSides());
+		}
 			//5. Call and save what is returned from calculateTurnAngle()
 		
 			//6. Use drawPolygons() to draw your shape
@@ -42,8 +52,8 @@ public class TooManyShapes {
 		Random rand = new Random();
 		
 		for(int i = 0; i < numShapes; i++) {
-			int x = rand.nextInt(600);
-			int y = rand.nextInt(600);
+			int x = rand.nextInt(1800);
+			int y = rand.nextInt(900);
 			int angle = rand.nextInt(360);
 
 			rob.setX(x);
