@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 import org.jointheleague.graphical.robot.Robot;
 
 public class TooManyShapes {
-	static Robot rob = new Robot();
+	static Robot rob = new Robot("mini");
 
 	public static void main(String[] args) {
 		int degrees = 0;
