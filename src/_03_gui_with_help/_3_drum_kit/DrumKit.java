@@ -16,6 +16,7 @@ import game_tools.Sound;
 public class DrumKit implements MouseListener {
     static boolean canPlaySounds = true; // Set this to false if your computer cannot play sounds
     JLabel drumLabel;
+    JLabel cymbalLabel;
 
     public void run() {
         //  Make a JFrame variable and initialize it using "new JFrame()"
@@ -35,21 +36,24 @@ public class DrumKit implements MouseListener {
         //  Drum Kit recipe package.
 
         //  Put the name of the drum image file in a String variable.
-    	String snare;
+    	String snare = ("snare.jpg");
+    	String cymbal = ("cymbal.jpg");
         //  Edit the next line to use your String variable
         // drumLabel = createLabelImage(drumImageString);
-
+    	drumLabel = createLabelImage(snare);
+    	cymbalLabel = createLabelImage(cymbal);
         //  Add the label to the panel
-
+    	panel.add(drumLabel);
+    	panel.add(cymbalLabel);
         //  Call the pack() method on the frame.
         // Run your program. Do you see your drum image?
-
+    	drumKit.pack();
         // Add this MouseListener to drumLabel
-
+    	drumLabel.addMouseListener(this);
+    	cymbalLabel.addMouseListener(this);
         // *** Write the code in the mouseClicked() method below
 
         //  Set the layout of the panel to "new GridLayout()"
-
         //  Add a cymbal image to make a Drum Kit (one has been provided).
         //  You will need a different sound to go with this image.
         //  Remember to add this MouseListener to it. Run the program.
@@ -62,9 +66,9 @@ public class DrumKit implements MouseListener {
         // the console to see when this is printed.
 
         //JLabel labelClicked = (JLabel) e.getSource(); // This line gets the label
-                                                        // that the mouse
+    	JLabel drumClicked = (JLabel) e.getSource();                                                // that the mouse
                                                         // clicked on
-
+    	playSound("drum.wav");
         // You can use the drum sound provided ("drum.wav") or
         // download another drum sound (.wav) and drop it into the Drum Kit package.
         // You can find sounds on freesound.org, and to download from there, you must log in

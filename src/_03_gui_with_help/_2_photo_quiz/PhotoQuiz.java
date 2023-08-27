@@ -39,14 +39,21 @@ public class PhotoQuiz {
 		// 5. call the pack() method on the quiz window
 		quizWindow.pack();
 		// 6. ask a question that relates to the image
-		String question1 = JOptionPane.showInputDialog("What is the name of this Hollow Knight NPC?   Hint: It starts with Bar and is seven letters.");
+		String question1 = JOptionPane.showInputDialog("What is the name of this Hollow Knight NPC?   Type Hint for hint.");
 		// 7. print "CORRECT" if the user gave the right answer
 
 		// 8. print "INCORRECT" if the answer is wrong
 		if(question1.equalsIgnoreCase("Bardoon")) {
 			JOptionPane.showMessageDialog(null, "CORRECT!");
-		} else {
-			JOptionPane.showMessageDialog(null, "INCORRECT! Their name is Bardoon");
+		} else if(question1.equalsIgnoreCase("Hint")) {
+			String hint1 = JOptionPane.showInputDialog("Bar----");
+			if(hint1.equalsIgnoreCase("Bardoon")) {
+				JOptionPane.showMessageDialog(null, "CORRECT!");
+			} else {
+				JOptionPane.showMessageDialog(null, "INCORRECT!");
+			}
+		} else {	
+			JOptionPane.showMessageDialog(null, "INCORRECT!");
 		}
 		// 9. remove the component from the quiz window (you may not see the
 		// effect of this until step 12)
@@ -60,15 +67,23 @@ public class PhotoQuiz {
 		// 12. pack the quiz window
 		quizWindow.pack();
 		// 13. ask another question
-		String question2 = JOptionPane.showInputDialog("What is this?   Hint: It is NOT a chicken, but it starts with c and is 5 letters.");
+		String question2 = JOptionPane.showInputDialog("What is this Legend of Zelda enemy? Type Hint for hint.");
 		// 14+ check answer, say if correct or incorrect, etc.
 		if(question2.equalsIgnoreCase("Cucco")) {
 			JOptionPane.showMessageDialog(null, "CORRECT!");
+		} else if(question2.equalsIgnoreCase("Hint")) {
+			String hint2 = JOptionPane.showInputDialog("C---o");
+			if(hint2.equalsIgnoreCase("Cucco")) {
+				JOptionPane.showMessageDialog(null, "CORRECT!");
+			} else {
+				JOptionPane.showMessageDialog(null, "INCORRECT!");
+			}
 		} else {
-			JOptionPane.showMessageDialog(null, "INCORRECT! It's a Cucco.");
+			JOptionPane.showMessageDialog(null, "INCORRECT!");
 		}
 		
 		panel.remove(comp2);
+		quizWindow.pack();
 		// 10. find another image and create it (might take more than one line
 		// of code)
 		String image3 = "https://upload.wikimedia.org/wikipedia/en/1/11/Meta_Knight_-_Kirby_Fighters_2.png";
@@ -78,12 +93,19 @@ public class PhotoQuiz {
 		// 12. pack the quiz window
 		quizWindow.pack();
 		// 13. ask another question
-		String question3 = JOptionPane.showInputDialog("What Kirby boss is this?   Hint: It's two words and the 2nd one is knight.");
+		String question3 = JOptionPane.showInputDialog("What Kirby boss is this?   Hint: It's two words.");
 		// 14+ check answer, say if correct or incorrect, etc.
 		if(question3.equalsIgnoreCase("Meta Knight")) {
 			JOptionPane.showMessageDialog(null, "CORRECT!");
+		} else if(question1.equalsIgnoreCase("Hint")) {
+			String hint1 = JOptionPane.showInputDialog("---- Knight");
+			if(hint1.equalsIgnoreCase("Meta Knight")) {
+				JOptionPane.showMessageDialog(null, "CORRECT!");
+			} else {
+				JOptionPane.showMessageDialog(null, "INCORRECT!");
+			}
 		} else {
-			JOptionPane.showMessageDialog(null, "INCORRECT! It's Morpho Knight.");
+			JOptionPane.showMessageDialog(null, "INCORRECT!");
 		}
 		panel.remove(comp3);
 		
