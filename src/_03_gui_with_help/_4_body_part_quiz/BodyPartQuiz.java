@@ -1,5 +1,8 @@
 package _03_gui_with_help._4_body_part_quiz;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 /*
  *    Copyright (c) The League of Amazing Programmers 2013-2021
  *    Level 1
@@ -21,10 +24,10 @@ public class BodyPartQuiz {
 	// package,or if you prefer, get celebrity photos from the Internet,
 	// place them in the recipe package(body_part_quiz), and change the names below.
 
-	String firstImage = "src/_05_body_part_quiz/arnold.jpeg";
-	String secondImage = "src/_05_body_part_quiz/leonardo.jpeg";
-	String thirdImage = "src/_05_body_part_quiz/morgan.jpeg";
-	String fourthImage = "src/_05_body_part_quiz/jack.jpeg";
+	String firstImage = "src/_03_gui_with_help._4_body_part_quiz/arnold.jpeg";
+	String secondImage = "src/_03_gui_with_help._4_body_part_quiz/leonardo.jpeg";
+	String thirdImage = "src/_03_gui_with_help._4_body_part_quiz/morgan.jpeg";
+	String fourthImage = "src/_03_gui_with_help._4_body_part_quiz/jack.jpeg";
 
 	JFrame window = new JFrame();
 	JPanel panel = new JPanel();
@@ -42,7 +45,7 @@ public class BodyPartQuiz {
 
 		// 3. Change the size of the window so that you can only see part of the
 		// image.
-		window.setSize(500, 500);
+		window.setSize(199, 253);
 
 		showNextImage();
 
@@ -51,12 +54,11 @@ public class BodyPartQuiz {
 	private void startQuiz() {
 
 		// 1. Make an int variable to hold the score.
-
+		int score = 0;
 		// 2. Set the size of the window in the initializeGui() method 
-
 		// 4. Ask the user who this person is and store their answer
 		String guess = JOptionPane.showInputDialog("who is this?");
-
+		window.pack();
 		// 5. Check their answer. If they guessed correctly:
 		// -- Tell them they are right and increase the score by 1
 
@@ -83,18 +85,32 @@ public class BodyPartQuiz {
 		JLabel label = new JLabel(icon);
 		return label;
 	}
+	private JLabel loadImage2(String fileName) {
+		JLabel imageLabel = new JLabel();
+		URL url;
+		try {
+			url = new URL(fileName);
+			Icon icon = new ImageIcon(url);
+			imageLabel.setIcon(icon);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			JOptionPane.showMessageDialog(null, "I can't find your image!!");
+		}
+		
+		return imageLabel;
+	}
 
 	ArrayList<JLabel> imageList = new ArrayList<JLabel>();
 	Iterator<JLabel> imageIterator;
 
 	private void initializeImageList() {
-		JLabel imageLabel = loadImage(firstImage);
+		JLabel imageLabel = loadImage2(firstImage);
 		imageList.add(imageLabel);
-		imageLabel = loadImage(secondImage);
+		imageLabel = loadImage2(secondImage);
 		imageList.add(imageLabel);
-		imageLabel = loadImage(thirdImage);
+		imageLabel = loadImage2(thirdImage);
 		imageList.add(imageLabel);
-		imageLabel = loadImage(fourthImage);
+		imageLabel = loadImage2(fourthImage);
 		imageList.add(imageLabel);
 	}
 

@@ -66,9 +66,13 @@ public class DrumKit implements MouseListener {
         // the console to see when this is printed.
 
         //JLabel labelClicked = (JLabel) e.getSource(); // This line gets the label
-    	JLabel drumClicked = (JLabel) e.getSource();                                                // that the mouse
-                                                        // clicked on
-    	playSound("drum.wav");
+    	JLabel labelClicked = (JLabel) e.getSource();                                                // that the mouse
+        if(labelClicked.equals(drumLabel)) {
+        	playSound("drum.wav");
+        	// clicked on
+        } else if(labelClicked.equals(cymbalLabel)) {
+        	playSound("cymbal.wav");
+        }
         // You can use the drum sound provided ("drum.wav") or
         // download another drum sound (.wav) and drop it into the Drum Kit package.
         // You can find sounds on freesound.org, and to download from there, you must log in
@@ -104,7 +108,7 @@ public class DrumKit implements MouseListener {
     @Override
     public void mousePressed(MouseEvent e) {
         // TODO Auto-generated method stub
-
+    	
     }
 
     @Override

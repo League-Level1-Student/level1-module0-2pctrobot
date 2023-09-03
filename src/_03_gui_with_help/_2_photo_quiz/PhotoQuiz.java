@@ -93,7 +93,7 @@ public class PhotoQuiz {
 		// 12. pack the quiz window
 		quizWindow.pack();
 		// 13. ask another question
-		String question3 = JOptionPane.showInputDialog("What Kirby boss is this?   Hint: It's two words.");
+		String question3 = JOptionPane.showInputDialog("What Kirby boss is this?   Type Hint for hint.");
 		// 14+ check answer, say if correct or incorrect, etc.
 		if(question3.equalsIgnoreCase("Meta Knight")) {
 			JOptionPane.showMessageDialog(null, "CORRECT!");
