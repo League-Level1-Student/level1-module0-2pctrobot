@@ -12,6 +12,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class SoundEffectsMachine implements ActionListener {
+	JButton button = new JButton();
+	JButton button2 = new JButton();
 	public void showButton() {
 		JFrame frame = new JFrame();
 		JPanel panel = new JPanel();
@@ -19,10 +21,8 @@ public class SoundEffectsMachine implements ActionListener {
 		panel.setVisible(true);
 		frame.add(panel);
 		System.out.println("Button clicked.");
-		JButton button = new JButton();
 	    panel.add(button);
 	    button.setText("Rain");
-	    JButton button2 = new JButton();
 	    panel.add(button2);
 	    button2.setText("SOS");
 	    frame.pack();
@@ -31,9 +31,13 @@ public class SoundEffectsMachine implements ActionListener {
    }
 	
 	
-	public void actionPerformed(ActionEvent e) {
-		
+	public void actionPerformed(ActionEvent arg0) {
+		JButton buttonPressed = (JButton) arg0.getSource();
+		if(buttonPressed.equals(button)) {
 		playSound("heavy-rain-daniel_simon.wav");
+		}else if(buttonPressed.equals(button2)) {
+		playSound("sos-morse-code_daniel-simion.wav");
+		}
 	}
 	private void playSound(String soundFile) {
 		String path = "src/_04_gui_from_scratch/_3_sound_effects_machine/";
