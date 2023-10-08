@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 public class SoundEffectsMachine implements ActionListener {
 	JButton button = new JButton();
 	JButton button2 = new JButton();
+	JButton button3 = new JButton();
 	public void showButton() {
 		JFrame frame = new JFrame();
 		JPanel panel = new JPanel();
@@ -25,9 +26,12 @@ public class SoundEffectsMachine implements ActionListener {
 	    button.setText("Rain");
 	    panel.add(button2);
 	    button2.setText("SOS");
+	    panel.add(button3);
+	    button3.setText("Thunderclap");
 	    frame.pack();
 	    button.addActionListener(this);
 	    button2.addActionListener(this);
+	    button3.addActionListener(this);
    }
 	
 	
@@ -37,6 +41,8 @@ public class SoundEffectsMachine implements ActionListener {
 		playSound("heavy-rain-daniel_simon.wav");
 		}else if(buttonPressed.equals(button2)) {
 		playSound("sos-morse-code_daniel-simion.wav");
+		}else if(buttonPressed.equals(button3)) {
+		playSound("Thunder Clap-SoundBible.com-1913038465.wav");
 		}
 	}
 	private void playSound(String soundFile) {
