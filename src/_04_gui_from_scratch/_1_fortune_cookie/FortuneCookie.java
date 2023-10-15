@@ -80,7 +80,7 @@ public class FortuneCookie implements ActionListener {
 	    }else if(rand >= 24000 && rand <= 24999) {
 	    	JOptionPane.showMessageDialog(null, "If you think nobody cares if you are alive, try missing a couple car payments.");
 	    }else if(rand == 25000) {
-	    	JOptionPane.showMessageDialog(null, "");
+	    	JOptionPane.showMessageDialog(null, "Go play Hollow Knight.");
 	    }else {
 	    	JOptionPane.showMessageDialog(null, "Oops! There was too much cosmic interference. Try again later.");
 	    }
