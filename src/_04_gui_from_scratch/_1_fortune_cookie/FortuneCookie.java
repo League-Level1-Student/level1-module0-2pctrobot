@@ -22,6 +22,9 @@ public class FortuneCookie implements ActionListener {
 	    frame.pack();
 	    button.addActionListener(this);
 	    input = JOptionPane.showConfirmDialog(null, "Do you want the buffet plan?");
+	    if(input == 0) {
+	    	JOptionPane.showMessageDialog(null, "Your bill is $75.");
+	    }
         // 0=yes, 1=no, 2=cancel
         System.out.println(input);
 	}
@@ -32,7 +35,7 @@ public class FortuneCookie implements ActionListener {
 	    if(rand >= 0 && rand <= 999) {
 	    	JOptionPane.showMessageDialog(null, "Blessed are the children for they shall inherit the national debt.");
 	    }else if(rand >= 1000 && rand <= 1999) {
-	    	JOptionPane.showMessageDialog(null, "You are about to become $10.95 poorer (8.95 if you had the buffet).");
+	    	JOptionPane.showMessageDialog(null, "You are about to become $3.95 poorer if you didn't pick the buffet.");
 	    }else if(rand >= 2000 && rand <= 2999) {
 	    	JOptionPane.showMessageDialog(null, "When in anger, sing the alphabet.");
 	    }else if(rand >= 3000 && rand <= 3999) {
@@ -85,7 +88,7 @@ public class FortuneCookie implements ActionListener {
 	    	JOptionPane.showMessageDialog(null, "Oops! There was too much cosmic interference. Try again later.");
 	    }
 	    if(input == 0) {
-	    	JOptionPane.showMessageDialog(null, "Your bill is $2.95.");
+	    
 	    }else {
 	    	JOptionPane.showMessageDialog(null, "Your bill is $3.95.");
 	    }
