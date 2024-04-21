@@ -34,6 +34,10 @@ import processing.core.PApplet;
 public class MagicWorms extends PApplet {
     static final int WIDTH = 600;
     static final int HEIGHT = 600;
+    public Random ran2 = new Random();
+    public int red = 0;
+    public int green = 0;
+    public int blue = 0;
 
     @Override
     public void settings() {
@@ -47,8 +51,11 @@ public class MagicWorms extends PApplet {
 
     @Override
     public void draw() {
+        red = ran2.nextInt(255);
+        green = ran2.nextInt(255);
+        blue = ran2.nextInt(255);
     	makeMagical();
-    	fill(0,240,230);
+    	fill(red,green,blue);
     	for(int j = 0; j < 999; j++) {
 			ellipse(getWormX(j), getWormY(j), 5, 5);	
     	}
